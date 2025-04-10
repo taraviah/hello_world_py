@@ -15,18 +15,16 @@ branches:
     regex: ^release[/-]
     mode: ContinuousDelivery
     increment: Patch
-    track-merge-targets: main
   hotfix:
     regex: ^hotfix[/-]
     mode: ContinuousDelivery
+    tag: 'hotfix-'
     increment: Patch
-    track-merge-targets: main, release
   pull-request:
     regex: ^(pull|pull\-requests|pr)[/-]
     mode: ContinuousDelivery
     tag: 'rc-'
     increment: Inherit
-    tag-number-pattern: '[/-](?<number>\d+)'
 ignore:
   sha: []
 increment: Inherit
