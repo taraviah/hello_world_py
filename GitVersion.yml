@@ -12,18 +12,15 @@ branches:
     mode: ContinuousDelivery
     tag: ''
     increment: Patch
-  release:
-    regex: ^release[/-]
-    mode: ContinuousDelivery
-    tag: ''
-    increment: Patch
-    track-merge-targets: main
   hotfix:
     regex: ^hotfix[/-]
     mode: ContinuousDelivery
     tag: 'hotfix-'
     increment: Patch
-    track-merge-targets: main, release
+    source-branches: ['main']
+    track-merge-target: true
+    tracks-release-branches: true
+    is-release-branch: false
   pull-request:
     regex: ^(pull|pull\-requests|pr)[/-]
     mode: ContinuousDelivery
